@@ -1,0 +1,23 @@
+{
+  "name": "kaitcov",
+  "version": "1.0.0",
+  "description": "personal website",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaitcov/reqFinder.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kaitcov/reqFinder/issues"
+  },
+  "homepage": "https://github.com/kaitcov/reqFinder#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "serve-static": "^1.11.1"
+  }
+}

@@ -1,0 +1,3 @@
+Flask
+wtforms
+Flask-WTF==0.10.3

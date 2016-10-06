@@ -1,0 +1,18 @@
+yout.html' %}
+{% block content %}
+
+<p>{{ dayOfWeek }} - {{ campusName }} - {{ buildingName }} </p>
+<h5> These classes meet your requested requirement </h5>
+
+{% for room in rooms %}
+<div class="panel panel-primary">
+  <div class="panel-heading">
+	  <h3 class="panel-title">{{ room.roomNum }}</h3>
+  </div>
+  <ul class="list-group">
+	  <li class="list-group-item">{{ room.time|linebreaksbr|safe }} </li>
+  </ul>
+</div>
+{% endfor %}
+
+{% endblock %}
