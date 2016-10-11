@@ -1,0 +1,18 @@
+{%extends 'layout.html' %}
+{% block content %}
+
+<p>{{ core }}</p>
+<h5> This is the requirement </h5>
+
+{% for room in rooms %}
+<div class="panel panel-primary">
+  <div class="panel-heading">
+	  <h3 class="panel-title">{{ room.roomNum }}</h3>
+  </div>
+  <ul class="list-group">
+	  <li class="list-group-item">{{ room.time|linebreaksbr|safe }} </li>
+  </ul>
+</div>
+{% endfor %}
+
+{% endblock %}

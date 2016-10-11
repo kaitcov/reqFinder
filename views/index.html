@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+<script src="http://mozilla.github.io/nunjucks/files/nunjucks.min.js"></script>
+{% block content %}
+            <div class="form group">
+                <p class="lead">Enter a core requirement:</p>
+                <form action="core" method="post">
+                    <select aria-label="Select menu example" name=core>
+                        <option selected>Open this select menu</option>
+                        <option value="21C">21C</option>
+                        <option value="NS">NS</option>
+                        <option value="WrD">WrD</option>
+                    </select>
+                    </br>
+                    <input type="submit">
+                </form>
+                <p class="lead">Or enter a course:</p>
+                </br>
+                <p> Department Code: </p>
+                <form action="courses"  method="post">
+                    <input type="text" name="deptCode">
+                    <input type="submit">
+                </form>
+                </br>
+                <p> Course Code: </p>
+                <form action="courses"  method="post">
+                    <input type="text" name="courseNum">
+                    <input type="submit">
+                </form>
+                </br>
+                <p> Index: </p>
+                <form action="courses"  method="post">
+                    <input type="text" name="index">
+                    <input type="submit">
+                </form>
+                <br>
+                <p class="lead">Pick a campus</p>
+                <br>
+                <p class="lead">Pick a building</p>
+                <br>
+            </div>
+            <button id="submitQ" type="submit" class="btn btn-danger" disabled="disabled">Submit</button>
+        </form>
+{% endblock %}
+
