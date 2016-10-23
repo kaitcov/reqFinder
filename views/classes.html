@@ -1,17 +1,39 @@
-{%extends 'layout.html' %}
+{% extends 'layout.html' %}
 {% block content %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#hide").click(function(){
+        $("ul").hide();
+    });
+    $("#show").click(function(){
+        $("ul").show();
+    });
+});
+</script>
 
-<p>{{ core }}</p>
-<h5> This is the requirement </h5>
+<p>{{ core }} Courses</p>
+<h5> This core requirement is fulfilled by the following courses </h5>
 
-{% for room in rooms %}
+{% for course in courses %}
 <div class="panel panel-primary">
-  <div class="panel-heading">
-	  <h3 class="panel-title">{{ room.roomNum }}</h3>
-  </div>
-  <ul class="list-group">
-	  <li class="list-group-item">{{ room.time|linebreaksbr|safe }} </li>
-  </ul>
+    <div class="panel-heading">
+        <h3 class="panel-title">{{ course.subject }}:{{ course.courseNumber }} - {{ course.title }} </h3>
+    </div>
+
+    <div class="list-group">
+        <div class="list-group-item">
+        {% for section in course.sections %}
+                Section </br> {{ section.number }} 
+            Index </br> {{ section.index }}  
+                    {% for meeting in section.meetingTimes %}
+                       </br> {{ meeting.meetingDay }} {{ meeting.startTime }}-{{ meeting.endTime }} {{ meeting.campusAbbrev }} 
+                    {% endfor %}
+            </br>{% if section.openStatus == true %} Open {% else %} Closed {% endif %} </li>
+        {% endfor %}
+        </div>
+    </div>
+
 </div>
 {% endfor %}
 
