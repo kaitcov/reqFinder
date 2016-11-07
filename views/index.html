@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 <script src="http://mozilla.github.io/nunjucks/files/nunjucks.min.js"></script>
 {% block content %}
+        <form name="myForm" role="form" method="post" action="/core">
             <div class="form group">
                 <p class="lead">Enter a core requirement:</p>
                 <form action="core" method="post">
@@ -11,34 +12,27 @@
                         {% endfor %}
                     </select>
                     </br>
-                    <input type="submit">
+                    <button id="submitQ" type="submit" class="btn btn-danger" style="margin-top: 2%; margin-bottom:5%;">Submit</button>
                 </form>
                 <p class="lead">Or enter a course:</p>
                 </br>
                 <p> Department Code: </p>
                 <form action="courses"  method="post">
                     <input type="text" name="deptCode">
-                    <input type="submit">
                 </form>
                 </br>
                 <p> Course Code: </p>
                 <form action="courses"  method="post">
                     <input type="text" name="courseNum">
-                    <input type="submit">
                 </form>
                 </br>
                 <p> Index: </p>
                 <form action="courses"  method="post">
                     <input type="text" name="index">
-                    <input type="submit">
                 </form>
                 <br>
-                <p class="lead">Pick a campus</p>
-                <br>
-                <p class="lead">Pick a building</p>
-                <br>
             </div>
-            <button id="submitQ" type="submit" class="btn btn-danger" disabled="disabled">Submit</button>
+            <button id="submitQ" type="submit" class="btn btn-danger">Submit</button>
         </form>
 {% endblock %}
 

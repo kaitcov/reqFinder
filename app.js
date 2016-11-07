@@ -46,7 +46,7 @@ app.post('/core',function(req,res){
     var callbacktwo = function(error, response, body){
         if (!error && response.statusCode === 200){
             var courses = body; //gives us access to entire courses document based on core code
-        }    
+        }   
     res.render('classes.html', {core: core, courses: courses});
     }
 

@@ -23,14 +23,45 @@ $(document).ready(function(){
 
     <div class="list-group">
         <div class="list-group-item">
-        {% for section in course.sections %}
-                Section </br> {{ section.number }} 
-            Index </br> {{ section.index }}  
+                {% for section in course.sections %}
+            <table class="table table-bordered">
+                <tr>
+                    <td>
+                        Section
+                    </td>
+                    <td>
+                        {{ section.number }} 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Index
+                    </td>
+                    <td>
+                        {{ section.index }}
+                    </td>
+                </tr>
                     {% for meeting in section.meetingTimes %}
-                       </br> {{ meeting.meetingDay }} {{ meeting.startTime }}-{{ meeting.endTime }} {{ meeting.campusAbbrev }} 
+                <tr>
+                    <td>
+                        {{ meeting.meetingDay }} 
+                        {{ meeting.startTime }}-{{ meeting.endTime }} 
+                    </td>
+                    <td>
+                        {{ meeting.campusAbbrev }} 
+                    </td>
+                </tr>
                     {% endfor %}
-            </br>{% if section.openStatus == true %} Open {% else %} Closed {% endif %} </li>
-        {% endfor %}
+                <tr>
+                    <td>
+                        {% if section.openStatus == true %} Open {% else %} Closed {% endif %} 
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            </table>
+            </br>
+                {% endfor %}
         </div>
     </div>
 
